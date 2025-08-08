@@ -31,9 +31,11 @@ python main.py --input data/input.txt --output results/output.txt
 
 ## Features
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Retrieve Dataset
+- Calculate incidence time to enrollment
+- Construct linear regression model
+- GSEA analysis
+- Data Visualization
 
 ## Configuration
 
