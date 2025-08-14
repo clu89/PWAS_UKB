@@ -573,7 +573,7 @@ Long  <- read.csv("PWAS_Long.csv")
 # Read the summary statistics generated from lm_pro()
 
 #### Volcano Plot ####
-Volcano <- function(data, filename) {
+Volcano <- function(data, file) {
 # Create a function for volcano plot
 
 data <- data %>%
@@ -608,11 +608,11 @@ ggsave(paste0(filename, ".png"))}
 # Add vertical line for beta coefficient = 0
 # Add labels
 # Adjust plot theme and x axis limits
-# Save the plot 
+# Save the plot
 
-Volcano(Full, filename = "Vol_plot_Full")
-Volcano(Short, filename = "Vol_plot_Short")
-Volcano(Long, filename = "Vol_plot_Long")
+Volcano(Full, file = "Vol_plot_Full")
+Volcano(Short, file = "Vol_plot_Short")
+Volcano(Long, file = "Vol_plot_Long")
 # Plot volcano plot for Full, Short, and Long pneumonia ITE model
 
 #### GSEA Analysis ####
