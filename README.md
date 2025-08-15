@@ -10,13 +10,13 @@ The study utilize datasets containing baseline characteristics and proteomics da
 A full model was generated with all covariates adjusted to explore the impact of previous pneumonia infection on proteomic profile. Two models (long and short pneumonia ITE model) were generated to investigate whether the main effect is driven by more recent pneumonia infection through sensitivity analysis.
 
     * Full Model: 
-    INT(NPX) = β0 + β1 ∙ pneumonia infection + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (age∙sex) + β6 ∙ (age^2∙sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch	
+    INT(NPX) = β0 + β1 ∙ pneumonia infection + β2 ∙ age + β3 ∙ sex + β4 ∙ age^2 + β5 ∙ (age∙sex) + β6 ∙ (age^2∙sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch	
 
     * Long pneumonia ITE Model:
-    INT(NPX) = β0 + β1 ∙ long pneumonia ITE + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (age∙sex) + β6 ∙ (age^2∙sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch
+    INT(NPX) = β0 + β1 ∙ long pneumonia ITE + β2 ∙ age + β3 ∙ sex + β4 ∙ age^2 + β5 ∙ (age∙sex) + β6 ∙ (age^2∙sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch
 
     * Short pneumonia ITE Model:
-    INT(NPX) = β0 + β1 ∙ short pneumonia ITE + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (age∙sex) + β6 ∙ (age^2∙sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch
+    INT(NPX) = β0 + β1 ∙ short pneumonia ITE + β2 ∙ age + β3 ∙ sex + β4 ∙ age^2 + β5 ∙ (age∙sex) + β6 ∙ (age^2∙sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch
 
 
 # Table of Contents
@@ -158,6 +158,7 @@ Using a newer version of R is recommended (ex. R/4.4.0).
 ## Contact
 
 For questions or support, contact [casper860311@gmail.com].
+
 
 
 
