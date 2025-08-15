@@ -68,16 +68,28 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 ```
 **Output**
 
-<p align = "center">
-PWAS result
-<br>
-<iframe 
-src = "Table 1.htm"
-width = 250
-frameborder = "0"
->
-</iframe> 
-</p>
+| Protein |    beta   |    SE    |    pval    |    Bonf    |
+|---------|-----------|----------|------------|------------|
+|RNASE6   |  0.1795	 |  0.0222  |  6.12E-16  |  1.79E-12  |
+|GDF15	 |  0.1581	 |  0.0196  |  7.49E-16  |  2.19E-12  |
+|OCLN	    |  0.1782	 |  0.0222  |  1.04E-15  |  3.03E-12  |
+|ADM      |  0.1698	 |  0.0216  |  3.72E-15	 |  1.09E-11  |
+|LMNB2	 |  0.1687	 |  0.0223  |  3.61E-14	 |  1.05E-10  |
+|CHCHD10  |  0.1613	 |  0.0213  |  4.13E-14	 |  1.21E-10  |
+|WFDC2	 |  0.1569	 |  0.0211  |  1.00E-13	 |  2.93E-10  |
+|RBFOX3	 |  0.1539	 |  0.0212  |  3.81E-13	 |  1.11E-09  |
+|IFI30	 |  0.1599	 |  0.0221  |  4.47E-13	 |  1.30E-09  |
+|TNFRSF10B|	 0.1528	 |  0.0214  |  8.64E-13	 |  2.52E-09  |
+|EDA2R	 |  0.1315	 |  0.0184  |  1.00E-12	 |  2.93E-09  |
+|PLAUR	 |  0.1536	 |  0.0222  |  4.25E-12	 |  1.24E-08  |
+|COL18A1  |  0.1516	 |  0.0220  |  5.49E-12	 |  1.60E-08  |
+|SHISA5	 |  0.1502	 |  0.0218  |  5.62E-12	 |  1.64E-08  |
+|PIGR	    |  0.1539	 |  0.0226  |  9.10E-12	 |  2.66E-08  |
+|LGALS9	 |  0.1500	 |  0.0221  |  1.19E-11	 |  3.47E-08  |
+|PSAP	    |  0.1485	 |  0.0225  |  4.09E-11	 |  1.19E-07  |
+|IGFBP4	 |  0.1416	 |  0.0216  |  5.40E-11	 |  1.58E-07  |
+|CD99L2	 |  0.1494	 |  0.0228  |  6.09E-11	 |  1.78E-07  |
+|CSF1	    |  0.1477	 |  0.0230  |  1.25E-10	 |  3.63E-07  |
 
 
 - ***Volcano plot***
@@ -97,7 +109,7 @@ Volcano plot
 <br>
 <img 
 src = "Vol_plot_Full.png"
-width = 250
+width = 300
 > 
 </p>
 
@@ -121,7 +133,7 @@ GSEA plot
 <br>
 <img 
 src = "GSEA_Full_KEGG.png"
-width = 250
+width = 300
 > 
 </p>
 
@@ -136,7 +148,7 @@ Correlation plot
 <br>
 <img 
 src = "cor_plot.png"
-width = 250
+width = 300
 >
 </p>
 
@@ -150,3 +162,4 @@ Using a newer version of R is recommended (ex. R/4.4.0).
 ## Contact
 
 For questions or support, contact [casper860311@gmail.com].
+
