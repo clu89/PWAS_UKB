@@ -1,8 +1,23 @@
 # Proteome-Wide Association Study for UKB proteomics database
 
-This project is created for proteome-wide association study (PWAS) on UK Biobank database
+This study aims to conduct a PWAS using clinical and proteomics dataset from the UK biobank to identify differentially expressed proteins and over-represented pathways among people with and without history of pneumonia.
 
 # Study Design
+1. Materials and Methods
+The study utilize datasets containing baseline characteristics and proteomics data in UK Biobank. 
+
+2. Statistical Analysis
+A full model was generated with all covariates adjusted to explore the impact of previous pneumonia infection on proteomic profile. Two models (long and short pneumonia ITE model) were generated to conduct sensitivity analysis.
+
+    * Full Model: 
+    INT(NPX) = β0 + β1 ∙ pneumonia infection + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (agesex) + β6 ∙ (age2sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch	
+
+    * Long pneumonia ITE Model:
+    INT(NPX) = β0 + β1 ∙ long pneumonia ITE + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (agesex) + β6 ∙ (age2sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch
+
+    * Short pneumonia ITE Model:
+    INT(NPX) = β0 + β1 ∙ short pneumonia ITE + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (agesex) + β6 ∙ (age2sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch
+
 
 ## Table of Contents
 
@@ -10,8 +25,6 @@ This project is created for proteome-wide association study (PWAS) on UK Biobank
 - [Usage](#usage)
 - [Features](#features)
 - [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
 - [Contact](#contact)
 
 ## Installation
@@ -36,67 +49,63 @@ Rscript PWAS_UKB.R
 
 - *Data cleaning and management*
 
-Data cleaning was conducted with tidyverse
+Data cleaning was conducted with tidyverse.
 
 - *Calculate incidence time to enrollment*
 
-Incidence time to enrollment is calculated by subtracting enrol_date from pneumonia_onset with difftime function as followed
+Incidence time to enrollment is calculated by subtracting enrol_date from pneumonia_onset with difftime function as followed:
 
 analysis$pneumonia_ite <- difftime(as.Date(analysis$pneumonia_onset), as.Date(analysis$enrol_date), unit = "days")
 
 - *Linear model construction*
-1. Input data should contain exposure variable, covariates, and all columns for proteomics data
-2. Proteomics data matrix should only contain all columns for proteomics data
-3. Mode specifies the exposure variable and plot layout
-4. The exported table (PWAS result) should contain protein, beta coefficient, standard error, raw p-value, and Bonferroni-adjusted p-value
+1. Input data should contain exposure variable, covariates, and all columns for proteomics data.
+2. Proteomics data matrix should only contain all columns for proteomics data.
+3. Mode specifies the exposure variable and plot layout.
+4. The exported table (PWAS result) should contain protein, beta coefficient, standard error, raw p-value, and Bonferroni-adjusted p-value.
 
 lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "file_name")
 
-Output:
+**Output**
+![PWAS Result](image.png)
 
-[Insert top 20 associated proteins table]
+
 
 - *Volcano plot*
-1. Volcano plot serves as a visualization tool to indicate p-value distribution of associated proteins against beta coefficients
-2. Input data is the PWAS result table
-3. The output of this function is a scatter plot with upregulated proteins highlighted in red while downregualted proteins highlighted in blue
-4. Protein name of the top associations are attached nearby
+1. Volcano plot serves as a visualization tool to indicate p-value distribution of associated proteins against beta coefficients.
+2. Input data is the PWAS result table.
+3. The output of this function is a scatter plot with upregulated proteins highlighted in red while downregualted proteins highlighted in blue.
+4. Protein name of the top associations are attached nearby.
 
 Volcano(data = PWAS_data, file = "file_name")
 
-Output:
-
-[Insert a volcano plot here]
+**Output**
+![Volcano Plot](Vol_plot_Full.png)
 
 - *GSEA analysis*
-1. GSEA analysis interpret the biological functions of proteins from PWAS result
-2. Top associated proteins are ranked according to the product of the sign of beta coefficient and -log10 transformed raw p-value
-3. msig_collection and subcollection specifies the collection of pathways that will be used for the analysisin humans
-4. database specifies which database will be used (ex. KEGG, GO, etc.)
-5. range defines the number of pathways that will be plotted in the inverted bar chart
-6. All pathways were ranked by FDR-adjusted p-values
+1. GSEA analysis interpret the biological functions of proteins from PWAS result.
+2. Top associated proteins are ranked according to the product of the sign of beta coefficient and -log10 transformed raw p-value.
+3. msig_collection and subcollection specifies the collection of pathways that will be used for the analysisin humans.
+4. database specifies which database will be used (ex. KEGG, GO, etc.).
+5. range defines the number of pathways that will be plotted in the inverted bar chart.
+6. All pathways were ranked by FDR-adjusted p-values.
 
 GSEA(data = PWAS_data, msig_collection = , subcollection, database, range)
 
-[Insert a GSEA plot here]
+**Output**
+![GSEA Plot](GSEA_Full_KEGG.png)
 
-- Correlation analysis
-# Correlation plot
-## Correlation plot compares the beta coefficient across different models (full vs short pneumonia ITE)
-## Correlation plot contains pearson correlation coefficient, reference line, regression line and all the proteins association plotted in scatter plot
+- *Correlation analysis*
+1. Correlation plot compares the beta coefficient across different models (full vs short pneumonia ITE).
+2. Correlation plot contains pearson correlation coefficient, reference line, regression line and all the proteins association plotted in scatter plot.
+
+**Output**
+![Correlation Plot](cor_plot.png)
 
 ## Configuration
 
-Describe any configuration options or environment variables.
+Using a newer version of R is recommended (ex. R/4.4.0). 
 
-## Contributing
-
-Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For questions or support, contact [your.email@example.com](mailto:your.email@example.com).
+For questions or support, contact [casper860311@gmail.com].
