@@ -68,8 +68,6 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 ```
 **Output**
 
-<p align = "center">
-
 | Protein |    beta   |    SE    |    pval    |    Bonf    |
 |---------|-----------|----------|------------|------------|
 |RNASE6   |  0.1795	 |  0.0222  |  6.12E-16  |  1.79E-12  |
@@ -93,8 +91,6 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 |CD99L2	 |  0.1494	 |  0.0228  |  6.09E-11	 |  1.78E-07  |
 |CSF1	    |  0.1477	 |  0.0230  |  1.25E-10	 |  3.63E-07  |
 
-</p>
-
 - ***Volcano plot***
 1. Volcano plot serves as a visualization tool to indicate p-value distribution of associated proteins against beta coefficients.
 2. Input data is the PWAS result table.
@@ -105,10 +101,9 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 Volcano(data = PWAS_data, file = "file_name")
 ```
 
-**Output**
+**Output: Volcano plot**
 
 <p align = "center">
-Volcano plot
 <br>
 <img 
 src = "Vol_plot_Full.png"
@@ -129,10 +124,9 @@ width = 500
 GSEA(data = PWAS_data, msig_collection = , subcollection, database, range)
 ```
 
-**Output**
+**Output: GSEA plot**
 
 <p align = "center">
-GSEA plot
 <br>
 <img 
 src = "GSEA_Full_KEGG.png"
@@ -144,10 +138,9 @@ width = 500
 1. Correlation plot compares the beta coefficient across different models (full vs short pneumonia ITE).
 2. Correlation plot contains pearson correlation coefficient, reference line, regression line and all the proteins association plotted in scatter plot.
 
-**Output**
+**Output: Correlation plot**
 
 <p align = "center">
-Correlation plot
 <br>
 <img 
 src = "cor_plot.png"
@@ -165,6 +158,7 @@ Using a newer version of R is recommended (ex. R/4.4.0).
 ## Contact
 
 For questions or support, contact [casper860311@gmail.com].
+
 
 
 
