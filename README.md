@@ -121,7 +121,7 @@ width = 500
 6. All pathways were ranked by FDR-adjusted p-values.
 
 ```r
-GSEA(data = PWAS_data, msig_collection = , subcollection, database, range)
+GSEA(data = PWAS_data, msig_collection = "C2", subcollection = "CP:KEGG_LEGACY", database = "KEGG", range = 20)
 ```
 
 **Output: GSEA plot**
@@ -158,6 +158,7 @@ Using a newer version of R is recommended (ex. R/4.4.0).
 ## Contact
 
 For questions or support, contact [casper860311@gmail.com].
+
 
 
 
