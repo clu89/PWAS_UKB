@@ -63,11 +63,20 @@ analysis$pneumonia_ite <- difftime(as.Date(analysis$pneumonia_onset), as.Date(an
 3. Mode specifies the exposure variable and plot layout.
 4. The exported table (PWAS result) should contain protein, beta coefficient, standard error, raw p-value, and Bonferroni-adjusted p-value.
 
+```r
 lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "file_name")
-
+```
 **Output**
-![PWAS Result](image.png){width = 100}
 
+<p align = "center">
+PWAS result
+<iframe 
+src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/Global%20Health/Thesis/Table/PWAS/Table%201.htm"
+width = 250
+frameborder = "0"
+>
+</iframe> 
+</p>
 
 
 - ***Volcano plot***
@@ -76,10 +85,21 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 3. The output of this function is a scatter plot with upregulated proteins highlighted in red while downregualted proteins highlighted in blue.
 4. Protein name of the top associations are attached nearby.
 
+```r
 Volcano(data = PWAS_data, file = "file_name")
+```
 
 **Output**
-![Volcano Plot](Vol_plot_Full.png){width = 100}
+
+<p align = "center">
+Volcano plot
+<img 
+src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/UKB%20projects/Result%20files/Figure/Vol_plot_Full.png"
+width = 250
+>
+</iframe> 
+</p>
+
 
 - ***GSEA analysis***
 1. GSEA analysis interpret the biological functions of proteins from PWAS result.
@@ -89,17 +109,37 @@ Volcano(data = PWAS_data, file = "file_name")
 5. range defines the number of pathways that will be plotted in the inverted bar chart.
 6. All pathways were ranked by FDR-adjusted p-values.
 
+```r
 GSEA(data = PWAS_data, msig_collection = , subcollection, database, range)
+```
 
 **Output**
-![GSEA Plot](GSEA_Full_KEGG.png){width = 100}
+
+<p align = "center">
+GSEA plot
+<img 
+src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/UKB%20projects/Result%20files/Figure/GSEA_Full_KEGG.png"
+width = 250
+>
+</iframe> 
+</p>
 
 - ***Correlation analysis***
 1. Correlation plot compares the beta coefficient across different models (full vs short pneumonia ITE).
 2. Correlation plot contains pearson correlation coefficient, reference line, regression line and all the proteins association plotted in scatter plot.
 
 **Output**
-![Correlation Plot](cor_plot.png){width = 100}
+
+<p align = "center">
+Correlation plot
+<img 
+src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/UKB%20projects/Result%20files/Figure/cor_plot.png"
+width = 250
+>
+</iframe> 
+</p>
+
+
 
 ## Configuration
 
