@@ -70,6 +70,7 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 
 <p align = "center">
 PWAS result
+<br>
 <iframe 
 src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/Global%20Health/Thesis/Table/PWAS/Table%201.htm"
 width = 250
@@ -93,11 +94,11 @@ Volcano(data = PWAS_data, file = "file_name")
 
 <p align = "center">
 Volcano plot
+<br>
 <img 
 src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/UKB%20projects/Result%20files/Figure/Vol_plot_Full.png"
 width = 250
->
-</iframe> 
+> 
 </p>
 
 
@@ -117,11 +118,11 @@ GSEA(data = PWAS_data, msig_collection = , subcollection, database, range)
 
 <p align = "center">
 GSEA plot
+<br>
 <img 
 src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/UKB%20projects/Result%20files/Figure/GSEA_Full_KEGG.png"
 width = 250
->
-</iframe> 
+> 
 </p>
 
 - ***Correlation analysis***
@@ -132,11 +133,11 @@ width = 250
 
 <p align = "center">
 Correlation plot
+<br>
 <img 
 src = "file:///C:/Users/caspe/OneDrive/Desktop/Casper/Emory%20University/UKB%20projects/Result%20files/Figure/cor_plot.png"
 width = 250
 >
-</iframe> 
 </p>
 
 
