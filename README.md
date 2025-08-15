@@ -72,7 +72,7 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 PWAS result
 <br>
 <iframe 
-src = "tables/Table%201.htm"
+src = "Table%201.htm"
 width = 250
 frameborder = "0"
 >
@@ -96,7 +96,7 @@ Volcano(data = PWAS_data, file = "file_name")
 Volcano plot
 <br>
 <img 
-src = "images/Vol_plot_Full.png"
+src = "Vol_plot_Full.png"
 width = 250
 > 
 </p>
@@ -120,7 +120,7 @@ GSEA(data = PWAS_data, msig_collection = , subcollection, database, range)
 GSEA plot
 <br>
 <img 
-src = "images/GSEA_Full_KEGG.png"
+src = "GSEA_Full_KEGG.png"
 width = 250
 > 
 </p>
@@ -135,7 +135,7 @@ width = 250
 Correlation plot
 <br>
 <img 
-src = "images/cor_plot.png"
+src = "cor_plot.png"
 width = 250
 >
 </p>
