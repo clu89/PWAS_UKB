@@ -7,7 +7,7 @@ This study aims to conduct a PWAS using clinical and proteomics dataset from the
 The study utilize datasets containing baseline characteristics and proteomics data in UK Biobank. 
 
 2. Statistical Analysis
-A full model was generated with all covariates adjusted to explore the impact of previous pneumonia infection on proteomic profile. Two models (long and short pneumonia ITE model) were generated to conduct sensitivity analysis.
+A full model was generated with all covariates adjusted to explore the impact of previous pneumonia infection on proteomic profile. Two models (long and short pneumonia ITE model) were generated to investigate whether the main effect is driven by more recent pneumonia infection through sensitivity analysis.
 
     * Full Model: 
     INT(NPX) = β0 + β1 ∙ pneumonia infection + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (agesex) + β6 ∙ (age2sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch	
@@ -19,7 +19,7 @@ A full model was generated with all covariates adjusted to explore the impact of
     INT(NPX) = β0 + β1 ∙ short pneumonia ITE + β2 ∙ age + β3 ∙ sex + β4 ∙ age2 + β5 ∙ (agesex) + β6 ∙ (age2sex) + β7 ∙ smoking status + β8 ∙ ethnicity + β9 ∙ batch
 
 
-## Table of Contents
+# Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -47,7 +47,7 @@ Rscript PWAS_UKB.R
 
 ## Features
 
-- *Data cleaning and management*
+- ***Data cleaning and management***
 
 Data cleaning was conducted with tidyverse.
 
@@ -57,7 +57,7 @@ Incidence time to enrollment is calculated by subtracting enrol_date from pneumo
 
 analysis$pneumonia_ite <- difftime(as.Date(analysis$pneumonia_onset), as.Date(analysis$enrol_date), unit = "days")
 
-- *Linear model construction*
+- ***Linear model construction***
 1. Input data should contain exposure variable, covariates, and all columns for proteomics data.
 2. Proteomics data matrix should only contain all columns for proteomics data.
 3. Mode specifies the exposure variable and plot layout.
@@ -66,11 +66,11 @@ analysis$pneumonia_ite <- difftime(as.Date(analysis$pneumonia_onset), as.Date(an
 lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "file_name")
 
 **Output**
-![PWAS Result](image.png)
+![PWAS Result](image.png){width = 100}
 
 
 
-- *Volcano plot*
+- ***Volcano plot***
 1. Volcano plot serves as a visualization tool to indicate p-value distribution of associated proteins against beta coefficients.
 2. Input data is the PWAS result table.
 3. The output of this function is a scatter plot with upregulated proteins highlighted in red while downregualted proteins highlighted in blue.
@@ -79,9 +79,9 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 Volcano(data = PWAS_data, file = "file_name")
 
 **Output**
-![Volcano Plot](Vol_plot_Full.png)
+![Volcano Plot](Vol_plot_Full.png){width = 100}
 
-- *GSEA analysis*
+- ***GSEA analysis***
 1. GSEA analysis interpret the biological functions of proteins from PWAS result.
 2. Top associated proteins are ranked according to the product of the sign of beta coefficient and -log10 transformed raw p-value.
 3. msig_collection and subcollection specifies the collection of pathways that will be used for the analysisin humans.
@@ -92,14 +92,14 @@ Volcano(data = PWAS_data, file = "file_name")
 GSEA(data = PWAS_data, msig_collection = , subcollection, database, range)
 
 **Output**
-![GSEA Plot](GSEA_Full_KEGG.png)
+![GSEA Plot](GSEA_Full_KEGG.png){width = 100}
 
-- *Correlation analysis*
+- ***Correlation analysis***
 1. Correlation plot compares the beta coefficient across different models (full vs short pneumonia ITE).
 2. Correlation plot contains pearson correlation coefficient, reference line, regression line and all the proteins association plotted in scatter plot.
 
 **Output**
-![Correlation Plot](cor_plot.png)
+![Correlation Plot](cor_plot.png){width = 100}
 
 ## Configuration
 
