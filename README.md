@@ -68,6 +68,7 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 ```
 **Output**
 
+<div align = "center">
 | Protein |    beta   |    SE    |    pval    |    Bonf    |
 |---------|-----------|----------|------------|------------|
 |RNASE6   |  0.1795	 |  0.0222  |  6.12E-16  |  1.79E-12  |
@@ -90,6 +91,7 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 |IGFBP4	 |  0.1416	 |  0.0216  |  5.40E-11	 |  1.58E-07  |
 |CD99L2	 |  0.1494	 |  0.0228  |  6.09E-11	 |  1.78E-07  |
 |CSF1	    |  0.1477	 |  0.0230  |  1.25E-10	 |  3.63E-07  |
+</div>
 
 - ***Volcano plot***
 1. Volcano plot serves as a visualization tool to indicate p-value distribution of associated proteins against beta coefficients.
@@ -108,7 +110,7 @@ Volcano plot
 <br>
 <img 
 src = "Vol_plot_Full.png"
-width = 300
+width = 500
 > 
 </p>
 
@@ -132,7 +134,7 @@ GSEA plot
 <br>
 <img 
 src = "GSEA_Full_KEGG.png"
-width = 300
+width = 500
 > 
 </p>
 
@@ -147,7 +149,7 @@ Correlation plot
 <br>
 <img 
 src = "cor_plot.png"
-width = 300
+width = 500
 >
 </p>
 
@@ -161,6 +163,7 @@ Using a newer version of R is recommended (ex. R/4.4.0).
 ## Contact
 
 For questions or support, contact [casper860311@gmail.com].
+
 
 
 
