@@ -72,7 +72,7 @@ lm_pro(data = data, protein = proteomics_data_matrix, mode = "full", fill = "fil
 PWAS result
 <br>
 <iframe 
-src = "Table%201.htm"
+src = "Table 1.htm"
 width = 250
 frameborder = "0"
 >
